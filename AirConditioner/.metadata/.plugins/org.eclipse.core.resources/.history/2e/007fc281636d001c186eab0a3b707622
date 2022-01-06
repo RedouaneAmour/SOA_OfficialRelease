@@ -1,0 +1,15 @@
+package fr.insa.mas.TriggerAlarmMS.controller;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/TriggerAlarm")
+public class TriggerAlarm {
+	@PostMapping("/{frequency}")
+	public String triggerAlarm(@PathVariable double frequency) {
+		return "alarm is triggered every " + (1/frequency) + "seconds";
+	}
+}
